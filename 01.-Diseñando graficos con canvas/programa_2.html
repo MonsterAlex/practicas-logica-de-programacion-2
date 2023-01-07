@@ -1,0 +1,41 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+	function dibujarCuadrado(x,y,color)
+	{
+
+		var pantalla = document.querySelector("canvas");
+		var pincel =pantalla.getContext("2d");
+
+		pincel.fillStyle = color;
+		pincel.fillRect(x,y,50,50);
+		pincel.strokeStyle = "black";
+		pincel.strokeRect(x,y,50,50); //dibuja bordes
+	}
+
+	var x = 0;
+
+	while(x < 600)
+	{
+
+		dibujarCuadrado(x,0,"red");
+		dibujarCuadrado(x,50,"yellow");
+		dibujarCuadrado(x,100,"green");
+
+		x = x + 50; //el 50 es para indicar que la primera pocicion va a ser 50, despues para el otro seria ese 50 + 50
+	}
+
+	 /*tambien se puede hacer con el for
+
+	for(var x = 0; x < 600; x = x + 50)
+	{
+
+		dibujarCuadrado(x,0,"red");
+		dibujarCuadrado(x,50,"yellow");
+		dibujarCuadrado(x,100,"green");
+	}
+		
+	*/
+
+</script>
